@@ -1,10 +1,6 @@
 # NodeJS AMI Creation Using Packer for MERN Stack Projecy
 
-# Step:1 Install Packer 
-#################################################################################################################################
-# Step:1 Packer installation
-
-#################################################################################################################################
+## Step:1 Packer installation
 cat <<EOF > packerinstall.sh
 #!/bin/bash
 curl -fsSL https://apt.releases.hashicorp.com/gpg | sudo apt-key add -
