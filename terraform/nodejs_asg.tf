@@ -35,6 +35,7 @@ module "asg" {
   enable_monitoring = true
   target_group_arns = module.alb.target_group_arns
   iam_instance_profile_name = "codedeploy_role_for_ec2"
+  security_groups = [aws_security_group.kunjan-sg-node.id]
 
   tags = {
     env = "dev"
@@ -68,14 +69,15 @@ resource "aws_security_group" "kunjan-sg-node" {
     from_port        = 22
     to_port          = 22
     protocol         = "tcp"
-    cidr_blocks      = [module.vpc.vpc_cidr_block]
+    security_groups = [aws_security_group.pritunl-sg.id]
+    #cidr_blocks      = [module.vpc.vpc_cidr_block]
   }
   ingress {
     description      = "TLS from VPC"
     from_port        = 3000
     to_port          = 3000
     protocol         = "tcp"
-    cidr_blocks      = [module.vpc.vpc_cidr_block]
+    security_groups = [aws_security_group.kunjan-sg-lb.id]
   }
   egress {
     from_port        = 0
