@@ -8,7 +8,6 @@ sudo npm install -g npm@latest
 sudo npm install -g pm2@latest
 sudo apt install collectd -y
 sudo apt install awscli -y
-cd $HOME
 #install cloudwatch-agent and configure using ssm
 sudo wget https://s3.us-east-2.amazonaws.com/amazoncloudwatch-agent-us-east-2/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
 sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
