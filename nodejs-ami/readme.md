@@ -8,10 +8,10 @@ sudo apt-add-repository "deb [arch=amd64] https://apt.releases.hashicorp.com $(l
 
 sudo apt-get update && sudo apt-get install packer
 
-# Clone Repo & Build AMI using packer file.
+## Clone Repo & Build AMI using packer file.
 
 cd mern-infra/nodejs-ami/
 
 packer build ami-nodejs.pkr.hcl
 
-# Verify AMI on AWS Console
+## Verify AMI on AWS Console
