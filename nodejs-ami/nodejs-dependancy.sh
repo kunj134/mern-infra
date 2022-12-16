@@ -11,7 +11,6 @@ sudo apt install awscli -y
 #install cloudwatch-agent and configure using ssm
 sudo wget https://s3.us-east-2.amazonaws.com/amazoncloudwatch-agent-us-east-2/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
 sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
-# use ssm command in LT userdata with SSM-IAM
 sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:AmazonCloudWatch-kunjan -s
 #install codedeploy
 sudo apt update
