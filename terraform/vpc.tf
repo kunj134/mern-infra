@@ -1,4 +1,5 @@
-## VPC 
+root@DESKTOP-THUPM0N:~/mern-infra/terraform# cat vpc.tf
+## VPC
 
 module "vpc" {
   source = "terraform-aws-modules/vpc/aws"
