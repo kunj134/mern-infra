@@ -14,6 +14,7 @@ source "amazon-ebs" "kunjan-node-ami" {
   region        = "us-west-2"
   source_ami = "ami-0530ca8899fac469f"
   ssh_username = "ubuntu"
+  iam_instance_profile = "CodeDeploynodejsAppEC2"
 }
 
 build {
