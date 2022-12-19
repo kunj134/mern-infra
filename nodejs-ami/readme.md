@@ -12,6 +12,8 @@ sudo apt-get update && sudo apt-get install packer
 
 cd mern-infra/nodejs-ami/
 
+Note : before build, change 'nodejs-dependancy.sh' according to your region for cloudwatch & code deploy installation.
+
 packer build ami-nodejs.pkr.hcl
 
 ## Verify AMI on AWS Console
