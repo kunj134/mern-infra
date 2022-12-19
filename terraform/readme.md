@@ -1,6 +1,6 @@
 #MernStack project Infra Setup
 
-## Clone the repo and change to terraform directory
+##Clone the repo and change to terraform directory
 clone https://github.com/kunj134/mern-infra.git
 cd mern-infra/terraform
 
