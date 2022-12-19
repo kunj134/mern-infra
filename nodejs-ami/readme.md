@@ -15,3 +15,5 @@ cd mern-infra/nodejs-ami/
 packer build ami-nodejs.pkr.hcl
 
 ## Verify AMI on AWS Console
+
+login to aws console > EC2 service > AMI > own by me option
