@@ -1,4 +1,4 @@
-root@DESKTOP-THUPM0N:~/mern-infra/terraform# cat vpc.tf
+
 ## VPC
 
 module "vpc" {
