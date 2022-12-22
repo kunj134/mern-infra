@@ -12,11 +12,25 @@ module "alb" {
 
   target_groups = [
     {
+      name_prefix      = "nodejstf"
       backend_protocol = "HTTP"
-      backend_port     = 80
+      backend_port     = 3000
       target_type      = "instance"
-    }
-  ]
+
+      health_check = {
+        enabled             = true
+        interval            = 30
+        path                = "/"
+        port                = "traffic-port"
+        healthy_threshold   = 3
+        unhealthy_threshold = 3
+        timeout             = 6
+        protocol            = "HTTP"
+        matcher             = "200,404"
+      }
+
+    
+    
   https_listeners = [
     {
       port               = 443
