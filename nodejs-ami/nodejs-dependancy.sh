@@ -13,7 +13,7 @@ sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-c
 #install codedeploy
 sudo apt update
 sudo apt install ruby-full -y
-sudo wget https://aws-codedeploy-us-east-2.s3.us-west-2.amazonaws.com/latest/install
+sudo wget https://aws-codedeploy-us-west-2.s3.us-west-2.amazonaws.com/latest/install
 sudo chmod +x ./install
 sudo ./install auto > /tmp/logfile
 sudo systemctl start codedeploy-agent
