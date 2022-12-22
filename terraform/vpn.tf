@@ -39,6 +39,13 @@ resource "aws_security_group" "pritunl-sg" {
     protocol    = "tcp"
     cidr_blocks = ["0.0.0.0/0"]
   }
+ ingress {
+    description = "TLS from VPC"
+    from_port   = 1700
+    to_port     = 1700
+    protocol    = "udp"
+    cidr_blocks = ["0.0.0.0/0"]
+  }
   egress {
     from_port   = 0
     to_port     = 0
