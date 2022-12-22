@@ -1,20 +1,15 @@
-#!/bin/bash
 sudo apt update && sudo apt upgrade -y
-sudo apt autoremove --purge
-sudo apt autoclean
-curl -fsSL https://deb.nodesource.com/setup_18.x | sudo -E bash -
-sudo apt-get install nodejs
-sudo apt install collectd -y
-sudo apt install awscli -y
-#install cloudwatch-agent and configure using ssm
-sudo wget https://s3.us-west-2.amazonaws.com/amazoncloudwatch-agent-us-west-2/ubuntu/amd64/latest/amazon-cloudwatch-agent.deb
-sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
-sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -c ssm:AmazonCloudWatch-kunjan -s
-#install codedeploy
-sudo apt update
-sudo apt install ruby-full -y
-sudo wget https://aws-codedeploy-us-west-2.s3.us-west-2.amazonaws.com/latest/install
+curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
+sudo apt install collectd nodejs awscli ruby-full -y
+sudo apt install gcc make -y
+sudo wget https://s3.us-west-2.amazonaws.com/amazoncloudwatch-agent-us-west-2/ubuntu/amd64/latest/amazon-cloudwatch-agent.d>sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
+wget https://aws-codedeploy-us-west-2.s3.us-west-2.amazonaws.com/latest/install
 sudo chmod +x ./install
 sudo ./install auto > /tmp/logfile
-sudo systemctl start codedeploy-agent
+rm -rf amazon-cloudwatch-agent.deb
+rm -rf install
 sudo systemctl enable codedeploy-agent
+sudo /opt/aws/amazon-cloudwatch-agent/bin/amazon-cloudwatch-agent-ctl -a fetch-config -m ec2 -s -c ssm:/kunjan/cloudwatch
+sudo systemctl start amazon-cloudwatch-agent.service
+sudo systemctl enable amazon-cloudwatch-agent.service
+sudo systemctl status amazon-cloudwatch-agent.service
