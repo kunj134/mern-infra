@@ -1,7 +1,6 @@
 sudo apt update && sudo apt upgrade -y
 curl -fsSL https://deb.nodesource.com/setup_16.x | sudo -E bash -
 sudo apt install collectd nodejs awscli ruby-full -y
-sudo apt install gcc make -y
 sudo npm install pm2@latest -g
 sudo wget https://s3.us-west-2.amazonaws.com/amazoncloudwatch-agent-us-west-2/ubuntu/amd64/latest/amazon-cloudwatch-agent.d>sudo dpkg -i -E ./amazon-cloudwatch-agent.deb
 wget https://aws-codedeploy-us-west-2.s3.us-west-2.amazonaws.com/latest/install
