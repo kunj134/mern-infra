@@ -28,7 +28,7 @@ module "asg" {
   launch_template_description = "Launch template example"
   update_default_version      = true
 
-  image_id          = "ami-0846bcd22fb499119"
+  image_id          = "ami-0a38df1ea18c458c0"
   instance_type     = "t3a.small"
   key_name          = "kunjankeyaws"
   ebs_optimized     = true
