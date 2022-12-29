@@ -1,4 +1,33 @@
-# Autoscaling group
+## Get AMI ID created from packer using data filter.
+
+data "aws_ami" "nodeami" {
+  most_recent      = true
+  owners           = ["self"]
+
+  filter {
+    name   = "name"
+    values = ["kunjan-node-ami"]
+  }
+
+  filter {
+    name   = "root-device-type"
+    values = ["ebs"]
+  }
+
+  filter {
+    name   = "virtualization-type"
+    values = ["hvm"]
+  }
+}
+
+## To validate above filter result printed ami_id as output of terraform plan
+
+output ami_id {
+  value = data.aws_ami.nodeami.id
+  description = "show output as ami id fetched while plan based upon filteration given in data"
+}
+
+## ASG module for NodeServers
 
 module "asg" {
   source  = "terraform-aws-modules/autoscaling/aws"
@@ -23,12 +52,13 @@ module "asg" {
     triggers = ["tag"]
   }
 
-  # Launch template
+  ## Launch template for asg nodeservers
   launch_template_name        = "kunjan-lt-node"
   launch_template_description = "Launch template example"
   update_default_version      = true
 
-  image_id          = "ami-0a38df1ea18c458c0"
+  image_id = data.aws_ami.nodeami.id
+  #image_id          = "ami-0a38df1ea18c458c0"
   instance_type     = "t3a.small"
   key_name          = "kunjankeyaws"
   ebs_optimized     = true
@@ -43,7 +73,8 @@ module "asg" {
   }
 }
 
-# Scaling Policy
+## Scaling Policy Defined for NodeServer's ASG
+
 resource "aws_autoscaling_policy" "asg-policy" {
   count                     = 1
   name                      = "asg-cpu-policy"

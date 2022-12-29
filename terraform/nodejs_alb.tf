@@ -12,40 +12,36 @@ module "alb" {
 
   target_groups = [
     {
-      name_prefix      = "nodejstf"
+      name_prefix      = "nodetf"
       backend_protocol = "HTTP"
       backend_port     = 3000
       target_type      = "instance"
 
-      health_check = {
-        enabled             = true
-        interval            = 30
-        path                = "/"
-        port                = "traffic-port"
-        healthy_threshold   = 3
-        unhealthy_threshold = 3
-        timeout             = 6
-        protocol            = "HTTP"
-        matcher             = "200,404"
       }
-
-    
-    
+      ]
+     
   https_listeners = [
     {
       port               = 443
       protocol           = "HTTPS"
-      certificate_arn    = "arn:aws:acm:us-west-2:421320058418:certificate/c221deb0-3707-40fc-81d4-ae05eeccd3fd"
+      certificate_arn    = "arn:aws:acm:us-west-2:421320058418:certificate/60d45d2f-7fb7-4c0c-96b4-3606f28d4c82"
       target_group_index = 0
     }
   ]
-  http_tcp_listeners = [
+  
+   http_tcp_listeners = [
     {
-      port               = 80
-      protocol           = "HTTP"
-      target_group_index = 0
+      port        = 80
+      protocol    = "HTTP"
+      action_type = "redirect"
+      redirect = {
+        port        = "443"
+        protocol    = "HTTPS"
+        status_code = "HTTP_301"
+      }
     }
   ]
+  
   tags = {
     env = "dev"
     Name = "kunjan-tg"
