@@ -22,9 +22,9 @@ cd terraform/env/#Environemnt-Directory#/
 
 ## Step:4 changes in values of defined variables as per the environment
 
-Refer to provider.tf to configure central tagging for the resources which will create from terraform.
+Refer to "provider.tf" to configure central tagging for the resources which will create from terraform.
 
-Refer to locals.tf to configure values of defined variables.
+Refer to "locals.tf" to configure values of defined variables.
 
 ## Step:5 Create infra setup using terraform commands
 
