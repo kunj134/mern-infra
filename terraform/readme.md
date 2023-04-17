@@ -4,15 +4,15 @@
 
 git clone -b <Branch-Name> https://github.com/Brandscope/terraform.git
 
-cd terraform/env/Environment-Directory-Here/
+cd terraform/env/#Environment-Directory-Here#/
 
 ## Step:2 Use aws-cli to configure the credentials or use following commands.
 
-$ export AWS_ACCESS_KEY_ID="<Your-AccessKey-Id>"
+$ export AWS_ACCESS_KEY_ID="#Your-AccessKey-Id#"
 
-$ export AWS_SECRET_ACCESS_KEY="<Your-SecretKey-Id>"
+$ export AWS_SECRET_ACCESS_KEY="#Your-SecretKey-Id#"
 
-$ export AWS_REGION="<region-name>"
+$ export AWS_REGION="#region-name#"
 
 ## Step:3 changes in values of defined variables as per the environment
 
