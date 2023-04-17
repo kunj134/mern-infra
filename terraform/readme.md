@@ -1,12 +1,18 @@
 # Infra Setup using terraform
 
+## Step:0 Version informations for terraform and aws-cli
+
+Terraform v1.3.8
+
+aws-cli/1.18.69
+
 ## Step:1 Clone the repo and change to terraform directory
 
 git clone -b <Branch-Name> https://github.com/Brandscope/terraform.git
 
 cd terraform/env/#environemnt-directory#/
 
-## Step:2 Use aws-cli to configure the credentials or use following commands.
+## Step:2 Use aws-cli to configure the credentials ($ aws configure) or use following commands.
 
 $ export AWS_ACCESS_KEY_ID="#Your-AccessKey-Id#"
 
@@ -19,7 +25,6 @@ $ export AWS_REGION="#region-name#"
 Refer to provider.tf to configure central tagging for the resources which will create from terraform.
 
 Refer to locals.tf to configure values of defined variables.
-
 
 ## Step:4 Create infra setup using terraform commands
 
