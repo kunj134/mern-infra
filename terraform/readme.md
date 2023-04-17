@@ -12,7 +12,7 @@ $ export AWS_ACCESS_KEY_ID="#Your-AccessKey-Id#"
 
 $ export AWS_SECRET_ACCESS_KEY="#Your-SecretKey-Id#"
 
-$ export AWS_REGION="#region-name#"
+$ export AWS_REGION="#Region-Name#"
 
 ## Step:3 Clone the repo and change to terraform directory
 
