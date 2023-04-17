@@ -4,7 +4,7 @@
 
 git clone -b <Branch-Name> https://github.com/Brandscope/terraform.git
 
-cd terraform/env/#Environment-Directory-Here#/
+cd terraform/env/#Environment-Directory#/
 
 ## Step:2 Use aws-cli to configure the credentials or use following commands.
 
