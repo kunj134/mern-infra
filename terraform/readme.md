@@ -1,17 +1,18 @@
-# MernStack project Infra Setup
+# Infra Setup using terraform
 
 ## Step:1 Clone the repo and change to terraform directory
 
-clone https://github.com/kunj134/mern-infra.git
+git clone -b <Branch-Name> https://github.com/Brandscope/terraform.git
 
-cd mern-infra/terraform
+cd terraform/env/<Environment-Directory>/
 
-## Step:2 Use aws-cli to configure the credentials or use following commands. 
-$ export AWS_ACCESS_KEY_ID="anaccesskey"
+## Step:2 Use aws-cli to configure the credentials or use following commands.
 
-$ export AWS_SECRET_ACCESS_KEY="asecretkey"
+$ export AWS_ACCESS_KEY_ID="<Your-AccessKey-Id>"
 
-$ export AWS_REGION="us-west-2"
+$ export AWS_SECRET_ACCESS_KEY="<Your-SecretKey-Id>"
+
+$ export AWS_REGION="<region-name>"
 
 ## Step:3 Create infra setup using terraform commands
 
@@ -23,6 +24,6 @@ $ terraform apply tf.plan
 
 ## Notes
 
-Refer to provider.tf to configure central tagging for the resources which willl create from terraform.
+Refer to provider.tf to configure central tagging for the resources which will create from terraform.
 
 Refer to locals.tf to configure values of defined variables.
