@@ -18,7 +18,7 @@ $ export AWS_REGION="#Region-Name#"
 
 git clone -b <Branch-Name> https://github.com/Brandscope/terraform.git
 
-cd terraform/env/#environemnt-directory#/
+cd terraform/env/#Environemnt-Directory#/
 
 ## Step:4 changes in values of defined variables as per the environment
 
