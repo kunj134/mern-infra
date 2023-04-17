@@ -22,6 +22,8 @@ cd terraform/env/#Environemnt-Directory#/
 
 ## Step:4 changes in values of defined variables as per the environment
 
+Refer to "backend.tf" to configure key as per the environment for remote state path.
+
 Refer to "provider.tf" to configure central tagging for the resources which will create from terraform.
 
 Refer to "locals.tf" to configure values of defined variables.
@@ -33,3 +35,5 @@ $ terraform init
 $ terraform plan -out tf.plan
 
 $ terraform apply tf.plan
+
+$ terraform destroy [This will destroy all resources created from terraform apply]
