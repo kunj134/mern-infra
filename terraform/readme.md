@@ -36,4 +36,4 @@ $ terraform plan -out tf.plan
 
 $ terraform apply tf.plan
 
-$ terraform destroy [This will destroy all resources created from terraform apply]
+$ terraform destroy (This will destroy all resources created from terraform apply)
